@@ -1,1 +1,1 @@
-export 'home_model.dart';
+export 'home_pokemon_model.dart';

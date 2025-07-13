@@ -1,7 +1,7 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:my_pokedex/src/features/presentations/pages/home/home_page.dart';
+import 'package:my_pokedex/src/features/presentations/pages/home/home_pokemon_page.dart';
 
 import '../../../../core/routes/app_routes.dart';
 
@@ -36,7 +36,7 @@ class _SplashPageState extends State<SplashPage> {
         ),
         splashIconSize: 200,
         backgroundColor: Colors.black87,
-        nextScreen: HomePage(),
+        nextScreen: HomePokemonPage(),
       ),
     );
   }
