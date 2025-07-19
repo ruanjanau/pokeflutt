@@ -16,6 +16,16 @@ class _HomePokemonPageState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Center(
+          child: const Text(
+            'Pokemons',
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          ),
+        ),
+        backgroundColor: Colors.redAccent,
+      ),
       body: SizedBox(
         width: double.infinity,
         height: double.infinity,
@@ -23,7 +33,7 @@ class _HomePokemonPageState
         child: Observer(
           builder: (_) {
             if (controller.isLoading) {
-              return const CircularProgressIndicator();
+              return Center(child: const CircularProgressIndicator());
             }
             if (controller.pokemons.isEmpty) {
               return const Center(child: Text('Nenhum Pokemon encontrado'));
@@ -34,9 +44,9 @@ class _HomePokemonPageState
               itemBuilder: (context, index) {
                 final pokemon = controller.pokemons[index];
                 return CardPokemon(
-                  id: pokemon.id,
+                  number: pokemon.number,
                   name: pokemon.name,
-                  type: pokemon.type,
+                  types: pokemon.type,
                   image: pokemon.image,
                 );
               },

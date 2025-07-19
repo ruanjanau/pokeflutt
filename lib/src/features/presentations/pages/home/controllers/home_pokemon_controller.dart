@@ -16,7 +16,6 @@ abstract class HomePokemonControllerBase with Store, ControllerLifeCycle {
 
   @override
   void onInit([Map<String, dynamic>? params]) {
-    print('✅ onInit chamado');
     getPokemons();
     super.onInit(params);
   }
@@ -35,18 +34,15 @@ abstract class HomePokemonControllerBase with Store, ControllerLifeCycle {
 
   @action
   Future<void> getPokemons() async {
-    print('🚀 Buscando pokémons...');
     setIsLoading(true);
-    await _homeRepository
-        .getPokemons()
-        .then((response) {
-          print('🎯 Pokémons carregados: ${response.length}');
-          pokemons.clear();
-          pokemons.addAll(response);
-        })
-        .whenComplete(() {
-          print('🏁 Finalizado');
-          setIsLoading(false);
-        });
+    final pokemons = await _homeRepository.getHomePokemons();
+    setPokemons(pokemons);
+    setIsLoading(false);
   }
+
+  @action
+  void setPokemons(List<HomeModel> pokemons) => this.pokemons = pokemons;
+
+  @action
+  void setPokemon(HomeModel pokemon) => this.pokemon = pokemon;
 }

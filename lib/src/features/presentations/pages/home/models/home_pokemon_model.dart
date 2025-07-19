@@ -1,29 +1,43 @@
-const _pokedexImg =
-    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/';
-
 class HomeModel {
-  final String id;
+  final int id;
   final String name;
+  final String number;
+  final List<String> type;
   final String image;
-  final String type;
+  final String height;
+  final String weight;
+  final List<String> weaknesses;
+  final List<String> strongAgainst;
+  final String description;
+  final String color;
 
   HomeModel({
     required this.id,
     required this.name,
-    required this.image,
+    required this.number,
     required this.type,
+    required this.image,
+    required this.height,
+    required this.weight,
+    required this.weaknesses,
+    required this.strongAgainst,
+    required this.description,
+    required this.color,
   });
 
-  factory HomeModel.fromJson(
-    Map<String, dynamic> json, {
-    required String type,
-  }) {
-    List<String> id = json['url'].split('/');
+  factory HomeModel.fromJson(Map<String, dynamic> json) {
     return HomeModel(
-      id: id[id.length - 2],
+      id: json['id'],
       name: json['name'],
-      image: '${_pokedexImg + id[id.length - 2]}.png',
-      type: type,
+      number: json['number'],
+      type: List<String>.from(json['type']),
+      image: json['image'],
+      height: json['height'],
+      weight: json['weight'],
+      weaknesses: List<String>.from(json['weaknesses']),
+      strongAgainst: List<String>.from(json['strongAgainst']),
+      description: json['description'],
+      color: json['color'],
     );
   }
 }

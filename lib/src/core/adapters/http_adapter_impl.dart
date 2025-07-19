@@ -8,7 +8,7 @@ import 'adapters.dart';
 class HttpAdapterImpl implements HttpAdapter {
   final _dio = dio.Dio(
     dio.BaseOptions(
-      baseUrl: 'https://pokeapi.co/api/v2',
+      baseUrl: 'https://6573803a063f876cec9cf9f6.mockapi.io/',
       receiveDataWhenStatusError: true,
       sendTimeout: const Duration(seconds: 30),
       receiveTimeout: const Duration(seconds: 30),
