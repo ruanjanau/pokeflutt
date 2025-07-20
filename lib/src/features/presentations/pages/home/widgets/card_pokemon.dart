@@ -11,12 +11,14 @@ class CardPokemon extends StatelessWidget {
     required this.name,
     required this.types,
     required this.image,
+    required this.onTap,
   });
 
   final String number;
   final String name;
   final List<String> types;
   final String image;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,7 @@ class CardPokemon extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: InkWell(
-        onTap: () {},
+        onTap: onTap,
         child: Container(
           height: 120,
           decoration: BoxDecoration(
@@ -119,7 +121,7 @@ class CardPokemon extends StatelessWidget {
                     right: 6.0,
                     bottom: 0.0,
                     child: Opacity(
-                      opacity: 0.5,
+                      opacity: 0.7,
                       child: Image.asset(
                         'assets/images/pokebola.png',
                         width: 120,

@@ -1,6 +1,6 @@
 import 'package:mobx/mobx.dart';
 import 'package:my_pokedex/src/core/life_cycle/controller_life_cycle.dart';
-import '../models/home_pokemon_model.dart';
+import '../../../../../core/models/models.dart';
 import '../repositories/home_pokemon_repository.dart';
 
 part 'home_pokemon_controller.g.dart';
@@ -21,10 +21,10 @@ abstract class HomePokemonControllerBase with Store, ControllerLifeCycle {
   }
 
   @observable
-  List<HomeModel> pokemons = [];
+  List<PokemonsModel> pokemons = [];
 
   @observable
-  HomeModel? pokemon;
+  PokemonsModel? pokemon;
 
   @observable
   bool isLoading = false;
@@ -41,8 +41,8 @@ abstract class HomePokemonControllerBase with Store, ControllerLifeCycle {
   }
 
   @action
-  void setPokemons(List<HomeModel> pokemons) => this.pokemons = pokemons;
+  void setPokemons(List<PokemonsModel> pokemons) => this.pokemons = pokemons;
 
   @action
-  void setPokemon(HomeModel pokemon) => this.pokemon = pokemon;
+  void setPokemon(PokemonsModel pokemon) => this.pokemon = pokemon;
 }

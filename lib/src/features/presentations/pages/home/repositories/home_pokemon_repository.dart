@@ -1,9 +1,9 @@
 import '../../../../../core/adapters/adapters.dart';
 import '../../../../../core/life_cycle/life_cycle.dart';
-import '../models/home_pokemon_model.dart';
+import '../../../../../core/models/models.dart';
 
 class HomePokemonRepository extends RepositoryLifeCycle {
-  Future<List<HomeModel>> getHomePokemons() async {
+  Future<List<PokemonsModel>> getHomePokemons() async {
     final response = await httpAdapter.request(
       httpMethod: HttpMethod.get,
       url: 'pokemons',
@@ -13,8 +13,8 @@ class HomePokemonRepository extends RepositoryLifeCycle {
 
     final dataList = response.data as List;
     if (dataList.isEmpty) return [];
-    final pokemons = List<HomeModel>.from(
-      response.data[0]['pokemons'].map((e) => HomeModel.fromJson(e)),
+    final pokemons = List<PokemonsModel>.from(
+      response.data[0]['pokemons'].map((e) => PokemonsModel.fromJson(e)),
     );
     return pokemons;
   }
