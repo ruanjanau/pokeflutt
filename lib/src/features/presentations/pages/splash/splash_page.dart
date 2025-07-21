@@ -29,7 +29,7 @@ class _SplashPageState extends State<SplashPage> {
       body: AnimatedSplashScreen(
         splash: Center(
           child: LottieBuilder.asset(
-            'assets/lottie/splash.json',
+            'assets/lottie/pokebola_splash.json',
             width: 240,
             height: 240,
           ),
