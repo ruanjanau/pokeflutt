@@ -51,16 +51,16 @@ class DetailsPokemonPage extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                      top: MediaQuery.of(context).padding.top + 10,
-                      left: 16,
+                      top: MediaQuery.of(context).padding.top + 10.0,
+                      left: 16.0,
                       child: IconButton(
                         icon: const Icon(Icons.arrow_back, color: Colors.white),
                         onPressed: () => Modular.to.pop(),
                       ),
                     ),
                     Positioned(
-                      top: MediaQuery.of(context).padding.top + 10,
-                      right: 16,
+                      top: MediaQuery.of(context).padding.top + 10.0,
+                      right: 16.0,
                       child: IconButton(
                         icon: const Icon(
                           Icons.favorite_border,
@@ -78,19 +78,25 @@ class DetailsPokemonPage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const SizedBox(height: 80),
+                      const SizedBox(height: 40.0),
                       Text(
                         pokemon.name,
                         style: const TextStyle(
-                          fontSize: 28,
+                          fontSize: 28.0,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(height: 16),
                       Text(
-                        'Aqui vai o conteúdo do restante da tela com mais detalhes do Pokémon.',
-                        style: const TextStyle(fontSize: 16),
+                        'Nº${pokemon.number}',
+                        style: const TextStyle(fontSize: 16.0),
                       ),
+                      const SizedBox(height: 16.0),
+                      Text(
+                        pokemon.description,
+                        style: const TextStyle(fontSize: 16.0),
+                      ),
+                      SizedBox(height: 16.0),
+                      Divider(),
                     ],
                   ),
                 ),
@@ -98,7 +104,7 @@ class DetailsPokemonPage extends StatelessWidget {
             ],
           ),
           Positioned(
-            top: screenHeight * 0.12,
+            top: screenHeight * 0.14,
             left: screenWidth / 2.3 - 100,
             child: Image.network(
               pokemon.image,
