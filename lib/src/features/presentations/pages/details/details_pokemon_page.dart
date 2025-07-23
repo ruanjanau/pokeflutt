@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:my_pokedex/src/core/models/models.dart';
+import 'package:my_pokedex/src/features/presentations/pages/details/widgets/gender_progress_bar.dart';
+import 'package:my_pokedex/src/features/presentations/pages/details/widgets/info_detail_component.dart';
+import 'package:my_pokedex/src/features/presentations/pages/home/widgets/widgets.dart';
 
 import '../../../../core/style_scheme/style_scheme.dart';
 
@@ -90,13 +93,49 @@ class DetailsPokemonPage extends StatelessWidget {
                         'Nº${pokemon.number}',
                         style: const TextStyle(fontSize: 16.0),
                       ),
-                      const SizedBox(height: 16.0),
+
+                      SizedBox(height: 16.0),
+                      TypePokemon(types: pokemon.type),
+                      SizedBox(height: 16.0),
                       Text(
                         pokemon.description,
                         style: const TextStyle(fontSize: 16.0),
                       ),
                       SizedBox(height: 16.0),
                       Divider(),
+                      SizedBox(height: 16.0),
+                      InfoDetailComponent(
+                        detailOne: 'Peso',
+                        iconOne: Icons.fitness_center,
+                        infoOne: pokemon.peso,
+                        detailTwo: 'Altura',
+                        iconTwo: Icons.height_outlined,
+                        infoTwo: pokemon.height,
+                      ),
+                      SizedBox(height: 16.0),
+                      InfoDetailComponent(
+                        detailOne: 'Habilidade',
+                        iconOne: Icons.flash_on,
+                        infoOne: pokemon.habilidade,
+                        detailTwo: 'Categoria',
+                        iconTwo: Icons.label,
+                        infoTwo: pokemon.categoria,
+                      ),
+                      SizedBox(height: 16.0),
+                      Center(
+                        child: Text(
+                          'Gerenos',
+                          style: const TextStyle(
+                            fontSize: 16.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black54,
+                          ),
+                        ),
+                      ),
+                      GenderProgressBar(
+                        malePercentage: pokemon.gender.male,
+                        femalePercentage: pokemon.gender.female,
+                      ),
                     ],
                   ),
                 ),

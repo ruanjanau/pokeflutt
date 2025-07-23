@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:my_pokedex/src/core/life_cycle/page_life_cycle.dart';
+import 'package:my_pokedex/src/core/theme/them_app.dart';
 import 'package:my_pokedex/src/features/presentations/pages/home/controllers/home_pokemon_controller.dart';
 import 'package:my_pokedex/src/features/presentations/pages/home/widgets/card_pokemon.dart';
 
@@ -16,6 +17,7 @@ class _HomePokemonPageState
     extends PageLifeCycleState<HomePokemonController, HomePokemonPage> {
   @override
   Widget build(BuildContext context) {
+    final themeStore = Modular.get<ThemeApp>();
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -25,6 +27,18 @@ class _HomePokemonPageState
             style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
         ),
+        actions: [
+          IconButton(
+            icon: Icon(
+              themeStore.themeMode == ThemeMode.dark
+                  ? Icons.dark_mode
+                  : Icons.light_mode,
+            ),
+            onPressed: () {
+              themeStore.toggleTheme();
+            },
+          ),
+        ],
         backgroundColor: Colors.redAccent,
       ),
       body: SizedBox(
