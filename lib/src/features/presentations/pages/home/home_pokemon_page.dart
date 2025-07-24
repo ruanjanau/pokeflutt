@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:my_pokedex/src/core/life_cycle/page_life_cycle.dart';
-import 'package:my_pokedex/src/core/theme/them_app.dart';
+import 'package:my_pokedex/src/core/theme/theme_app.dart';
 import 'package:my_pokedex/src/features/presentations/pages/home/controllers/home_pokemon_controller.dart';
 import 'package:my_pokedex/src/features/presentations/pages/home/widgets/card_pokemon.dart';
 
