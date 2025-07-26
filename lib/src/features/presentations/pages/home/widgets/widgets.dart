@@ -1,2 +1,2 @@
-export 'card_pokemon.dart';
-export 'type_pokemon.dart';
+export 'card_pokemon_component.dart';
+export 'type_pokemon_component.dart';

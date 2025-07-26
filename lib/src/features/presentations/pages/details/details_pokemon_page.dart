@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:my_pokedex/src/core/models/models.dart';
-import 'package:my_pokedex/src/features/presentations/pages/details/widgets/gender_progress_bar.dart';
-import 'package:my_pokedex/src/features/presentations/pages/details/widgets/info_detail_component.dart';
-import 'package:my_pokedex/src/features/presentations/pages/home/widgets/widgets.dart';
+import '../../../../core/models/models.dart';
 
+import '../home/widgets/widgets.dart';
+
+import '../../../../core/assets/assets.dart';
 import '../../../../core/style_scheme/style_scheme.dart';
+import 'details.dart';
 
 class DetailsPokemonPage extends StatelessWidget {
-  final PokemonsModel pokemon;
+  final PokemonModel pokemon;
 
   const DetailsPokemonPage({super.key, required this.pokemon});
 
@@ -46,7 +47,7 @@ class DetailsPokemonPage extends StatelessWidget {
                       child: Opacity(
                         opacity: 0.6,
                         child: Image.asset(
-                          'assets/images/pokebola.png',
+                          ImagesNetwork.pokebola,
                           width: screenWidth * 0.8,
                           height: screenWidth * 0.8,
                           fit: BoxFit.contain,
@@ -76,67 +77,91 @@ class DetailsPokemonPage extends StatelessWidget {
                 ),
               ),
               Expanded(
-                child: Padding(
+                child: SingleChildScrollView(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const SizedBox(height: 40.0),
-                      Text(
-                        pokemon.name,
-                        style: const TextStyle(
-                          fontSize: 28.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        'Nº${pokemon.number}',
-                        style: const TextStyle(fontSize: 16.0),
-                      ),
-
-                      SizedBox(height: 16.0),
-                      TypePokemon(types: pokemon.type),
-                      SizedBox(height: 16.0),
-                      Text(
-                        pokemon.description,
-                        style: const TextStyle(fontSize: 16.0),
-                      ),
-                      SizedBox(height: 16.0),
-                      Divider(),
-                      SizedBox(height: 16.0),
-                      InfoDetailComponent(
-                        detailOne: 'Peso',
-                        iconOne: Icons.fitness_center,
-                        infoOne: pokemon.peso,
-                        detailTwo: 'Altura',
-                        iconTwo: Icons.height_outlined,
-                        infoTwo: pokemon.height,
-                      ),
-                      SizedBox(height: 16.0),
-                      InfoDetailComponent(
-                        detailOne: 'Habilidade',
-                        iconOne: Icons.flash_on,
-                        infoOne: pokemon.habilidade,
-                        detailTwo: 'Categoria',
-                        iconTwo: Icons.label,
-                        infoTwo: pokemon.categoria,
-                      ),
-                      SizedBox(height: 16.0),
-                      Center(
-                        child: Text(
-                          'Gerenos',
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(height: 40.0),
+                        Text(
+                          pokemon.name,
                           style: const TextStyle(
-                            fontSize: 16.0,
+                            fontSize: 28.0,
                             fontWeight: FontWeight.bold,
-                            color: Colors.black54,
                           ),
                         ),
-                      ),
-                      GenderProgressBar(
-                        malePercentage: pokemon.gender.male,
-                        femalePercentage: pokemon.gender.female,
-                      ),
-                    ],
+                        Text(
+                          'Nº${pokemon.number}',
+                          style: const TextStyle(fontSize: 16.0),
+                        ),
+
+                        SizedBox(height: 16.0),
+                        TypePokemonComponent(types: pokemon.type),
+                        SizedBox(height: 16.0),
+                        Text(
+                          pokemon.description,
+                          style: const TextStyle(fontSize: 16.0),
+                        ),
+                        SizedBox(height: 16.0),
+                        Divider(),
+                        SizedBox(height: 16.0),
+                        InfoDetailComponent(
+                          detailOne: Strings.weight,
+                          iconOne: Icons.fitness_center,
+                          infoOne: pokemon.peso,
+                          detailTwo: Strings.height,
+                          iconTwo: Icons.height_outlined,
+                          infoTwo: pokemon.height,
+                        ),
+                        SizedBox(height: 16.0),
+                        InfoDetailComponent(
+                          detailOne: Strings.ability,
+                          iconOne: Icons.flash_on,
+                          infoOne: pokemon.habilidade,
+                          detailTwo: Strings.catogory,
+                          iconTwo: Icons.label,
+                          infoTwo: pokemon.categoria,
+                        ),
+                        SizedBox(height: 16.0),
+                        Center(
+                          child: Text(
+                            Strings.gender,
+                            style: const TextStyle(
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black54,
+                            ),
+                          ),
+                        ),
+                        GenderProgressBar(
+                          malePercentage: pokemon.gender.male,
+                          femalePercentage: pokemon.gender.female,
+                        ),
+                        const SizedBox(height: 16.0),
+                        Center(
+                          child: Text(
+                            Strings.evolutions,
+                            style: const TextStyle(
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black54,
+                            ),
+                          ),
+                        ),
+                        Column(
+                          children:
+                              pokemon.evolutions.map((evolution) {
+                                return PokemonEvolutionComponent(
+                                  name: evolution.name,
+                                  number: evolution.number,
+                                  types: evolution.type,
+                                  imageUrl: evolution.image,
+                                );
+                              }).toList(),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

@@ -12,7 +12,7 @@ class DetailsPokemonModule extends Module {
     r.child(
       '/',
       child: (context) {
-        final pokemon = Modular.args.data as PokemonsModel;
+        final pokemon = Modular.args.data as PokemonModel;
         return DetailsPokemonPage(pokemon: pokemon);
       },
     );

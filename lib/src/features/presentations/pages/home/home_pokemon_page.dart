@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:my_pokedex/src/core/assets/strings/strings.dart';
 import 'package:my_pokedex/src/core/life_cycle/page_life_cycle.dart';
 import 'package:my_pokedex/src/core/theme/theme_app.dart';
 import 'package:my_pokedex/src/features/presentations/pages/home/controllers/home_pokemon_controller.dart';
-import 'package:my_pokedex/src/features/presentations/pages/home/widgets/card_pokemon.dart';
+import 'package:my_pokedex/src/features/presentations/pages/home/widgets/card_pokemon_component.dart';
 
 class HomePokemonPage extends StatefulWidget {
   const HomePokemonPage({super.key});
@@ -22,8 +23,8 @@ class _HomePokemonPageState
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: Center(
-          child: const Text(
-            'Pokemons',
+          child: Text(
+            Strings.pokemons,
             style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
         ),
@@ -58,7 +59,7 @@ class _HomePokemonPageState
               itemCount: controller.pokemons.length,
               itemBuilder: (context, index) {
                 final pokemon = controller.pokemons[index];
-                return CardPokemon(
+                return CardPokemonComponent(
                   onTap: () {
                     Modular.to.pushNamed('/details', arguments: pokemon);
                   },

@@ -21,10 +21,10 @@ abstract class HomePokemonControllerBase with Store, ControllerLifeCycle {
   }
 
   @observable
-  List<PokemonsModel> pokemons = [];
+  List<PokemonModel> pokemons = [];
 
   @observable
-  PokemonsModel? pokemon;
+  PokemonModel? pokemon;
 
   @observable
   bool isLoading = false;
@@ -41,8 +41,5 @@ abstract class HomePokemonControllerBase with Store, ControllerLifeCycle {
   }
 
   @action
-  void setPokemons(List<PokemonsModel> pokemons) => this.pokemons = pokemons;
-
-  @action
-  void setPokemon(PokemonsModel pokemon) => this.pokemon = pokemon;
+  void setPokemons(List<PokemonModel> pokemons) => this.pokemons = pokemons;
 }

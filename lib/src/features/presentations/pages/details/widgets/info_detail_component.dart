@@ -22,7 +22,6 @@ class InfoDetailComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        // Primeiro bloco
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,7 +62,7 @@ class InfoDetailComponent extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(width: 16.0), // Espaço entre os blocos
+        SizedBox(width: 16.0),
         // Segundo bloco
         Expanded(
           child: Column(

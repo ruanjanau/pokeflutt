@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/style_scheme/style_scheme.dart';
 
-class TypePokemon extends StatelessWidget {
+class TypePokemonComponent extends StatelessWidget {
   final List<String> types;
 
-  const TypePokemon({super.key, required this.types});
+  const TypePokemonComponent({super.key, required this.types});
 
   @override
   Widget build(BuildContext context) {

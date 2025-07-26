@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/style_scheme/style_scheme.dart';
 
-class CardPokemon extends StatelessWidget {
-  const CardPokemon({
+class CardPokemonComponent extends StatelessWidget {
+  const CardPokemonComponent({
     super.key,
     required this.number,
     required this.name,

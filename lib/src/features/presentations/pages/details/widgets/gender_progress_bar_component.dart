@@ -22,7 +22,6 @@ class GenderProgressBar extends StatelessWidget {
                 flex: (malePercentage * 100).toInt(),
                 child: Container(height: 10.0, color: Colors.blue),
               ),
-              // Parte feminina
               Expanded(
                 flex: (femalePercentage * 100).toInt(),
                 child: Container(height: 10.0, color: Colors.pinkAccent),

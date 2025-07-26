@@ -1,6 +1,7 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:my_pokedex/src/core/assets/images_network/images_network.dart';
 import 'package:my_pokedex/src/features/presentations/pages/home/home_pokemon_page.dart';
 
 import '../../../../core/routes/app_routes.dart';
@@ -29,7 +30,7 @@ class _SplashPageState extends State<SplashPage> {
       body: AnimatedSplashScreen(
         splash: Center(
           child: LottieBuilder.asset(
-            'assets/lottie/pokebola_loading.json',
+            ImagesNetwork.pokebolaLoading,
             width: 240,
             height: 240,
           ),

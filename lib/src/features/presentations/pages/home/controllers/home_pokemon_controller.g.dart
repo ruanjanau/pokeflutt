@@ -15,13 +15,13 @@ mixin _$HomePokemonController on HomePokemonControllerBase, Store {
   );
 
   @override
-  List<PokemonsModel> get pokemons {
+  List<PokemonModel> get pokemons {
     _$pokemonsAtom.reportRead();
     return super.pokemons;
   }
 
   @override
-  set pokemons(List<PokemonsModel> value) {
+  set pokemons(List<PokemonModel> value) {
     _$pokemonsAtom.reportWrite(value, super.pokemons, () {
       super.pokemons = value;
     });
@@ -33,13 +33,13 @@ mixin _$HomePokemonController on HomePokemonControllerBase, Store {
   );
 
   @override
-  PokemonsModel? get pokemon {
+  PokemonModel? get pokemon {
     _$pokemonAtom.reportRead();
     return super.pokemon;
   }
 
   @override
-  set pokemon(PokemonsModel? value) {
+  set pokemon(PokemonModel? value) {
     _$pokemonAtom.reportWrite(value, super.pokemon, () {
       super.pokemon = value;
     });
@@ -90,22 +90,11 @@ mixin _$HomePokemonController on HomePokemonControllerBase, Store {
   }
 
   @override
-  void setPokemons(List<PokemonsModel> pokemons) {
+  void setPokemons(List<PokemonModel> pokemons) {
     final _$actionInfo = _$HomePokemonControllerBaseActionController
         .startAction(name: 'HomePokemonControllerBase.setPokemons');
     try {
       return super.setPokemons(pokemons);
-    } finally {
-      _$HomePokemonControllerBaseActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  void setPokemon(PokemonsModel pokemon) {
-    final _$actionInfo = _$HomePokemonControllerBaseActionController
-        .startAction(name: 'HomePokemonControllerBase.setPokemon');
-    try {
-      return super.setPokemon(pokemon);
     } finally {
       _$HomePokemonControllerBaseActionController.endAction(_$actionInfo);
     }

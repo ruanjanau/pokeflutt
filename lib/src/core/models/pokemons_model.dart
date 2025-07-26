@@ -1,4 +1,6 @@
-class PokemonsModel {
+import 'models.dart';
+
+class PokemonModel {
   final int id;
   final String name;
   final String number;
@@ -13,8 +15,9 @@ class PokemonsModel {
   final String description;
   final String color;
   final PokemonGender gender;
+  final List<PokemonEvolution> evolutions;
 
-  PokemonsModel({
+  PokemonModel({
     required this.id,
     required this.name,
     required this.number,
@@ -29,10 +32,11 @@ class PokemonsModel {
     required this.description,
     required this.color,
     required this.gender,
+    required this.evolutions,
   });
 
-  factory PokemonsModel.fromJson(Map<String, dynamic> json) {
-    return PokemonsModel(
+  factory PokemonModel.fromJson(Map<String, dynamic> json) {
+    return PokemonModel(
       id: json['id'],
       name: json['name'],
       number: json['number'],
@@ -47,20 +51,9 @@ class PokemonsModel {
       description: json['description'],
       color: json['color'],
       gender: PokemonGender.fromJson(json['gender']),
-    );
-  }
-}
-
-class PokemonGender {
-  final double male;
-  final double female;
-
-  PokemonGender({required this.male, required this.female});
-
-  factory PokemonGender.fromJson(Map<String, dynamic> json) {
-    return PokemonGender(
-      male: (json['male'] as num).toDouble(),
-      female: (json['female'] as num).toDouble(),
+      evolutions: List<PokemonEvolution>.from(
+        json['evolutions'].map((x) => PokemonEvolution.fromJson(x)),
+      ),
     );
   }
 }
