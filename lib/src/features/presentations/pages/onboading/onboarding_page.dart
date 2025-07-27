@@ -59,7 +59,7 @@ class OnboardingPage extends StatelessWidget {
               subtitle: PrimaryButton(
                 titileButton: Strings.start,
                 onPressed: () => Modular.to.pushNamed('/home'),
-                color: Colors.black54,
+                color: Colors.redAccent,
               ),
               widget: Image.asset(ImagesNetwork.onboarding, scale: 1.0),
             ),
