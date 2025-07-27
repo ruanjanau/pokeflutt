@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:my_pokedex/src/core/theme/theme_app.dart';
+
+import 'core/theme/theme_app.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({super.key});

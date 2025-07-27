@@ -1,5 +1,5 @@
 import 'package:mobx/mobx.dart';
-import 'package:my_pokedex/src/core/life_cycle/controller_life_cycle.dart';
+import '../../../../../core/life_cycle/life_cycle.dart';
 import '../../../../../core/models/models.dart';
 import '../repositories/home_pokemon_repository.dart';
 

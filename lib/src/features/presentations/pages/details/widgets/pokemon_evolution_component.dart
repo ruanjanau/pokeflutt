@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokeflutt/src/core/widgets/widgets.dart';
 
 import '../../../../../core/style_scheme/style_scheme.dart';
 
@@ -46,7 +47,6 @@ class PokemonEvolutionComponent extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 16),
-              // Nome e número
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -64,37 +64,15 @@ class PokemonEvolutionComponent extends StatelessWidget {
                       style: const TextStyle(color: Colors.grey),
                     ),
                     const SizedBox(height: 8),
-                    // Barra de tipo
                     Row(
                       children:
                           types.map((type) {
                             final color = ColorsScheme().getColorByType(type);
                             final icon = IconsScheme().getIconByType(type);
-                            return Container(
-                              margin: const EdgeInsets.only(right: 8),
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 8,
-                              ),
-                              height: 24,
-                              decoration: BoxDecoration(
-                                color: color,
-                                borderRadius: BorderRadius.circular(16),
-                              ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Icon(icon, size: 12, color: Colors.white),
-                                  const SizedBox(width: 4),
-                                  Text(
-                                    type,
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 14.0,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ],
-                              ),
+                            return TypesPokemon(
+                              type: type,
+                              color: color,
+                              icon: icon,
                             );
                           }).toList(),
                     ),

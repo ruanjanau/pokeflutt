@@ -1,7 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:my_pokedex/src/features/presentations/pages/home/controllers/home_pokemon_controller.dart';
-import 'package:my_pokedex/src/features/presentations/pages/home/home_pokemon_page.dart';
-import 'package:my_pokedex/src/features/presentations/pages/home/repositories/repositories.dart';
+
+import 'home.dart';
 
 class HomeModule extends Module {
   @override

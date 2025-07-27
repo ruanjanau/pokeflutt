@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_pokedex/src/features/presentations/pages/home/widgets/card_pokemon_skeleton_component.dart';
 import 'package:shimmer/shimmer.dart';
+
+import 'card_pokemon_skeleton_component.dart';
 
 class CardPokemonShimmerComponent extends StatelessWidget {
   const CardPokemonShimmerComponent({super.key});

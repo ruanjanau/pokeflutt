@@ -12,4 +12,12 @@ class AppRoutes {
   static void goToDetails() {
     Modular.to.pushNamed('/details/');
   }
+
+  static void goToOnboarding() {
+    Modular.to.pushNamed('/onboarding/');
+  }
+
+  static void goToOptions() {
+    Modular.to.pushNamed('/options/');
+  }
 }

@@ -1,1 +1,2 @@
-export 'filter_button.dart';
+export 'primary_button.dart';
+export 'types_pokemon.dart';

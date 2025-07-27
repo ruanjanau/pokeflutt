@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:pokeflutt/src/core/widgets/widgets.dart';
 import '../../../../core/models/models.dart';
 
 import '../home/widgets/widgets.dart';
@@ -119,13 +120,46 @@ class DetailsPokemonPage extends StatelessWidget {
                             style: const TextStyle(
                               fontSize: 16.0,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black54,
+                              color: Colors.grey,
                             ),
                           ),
                         ),
+                        SizedBox(height: 10.0),
                         GenderProgressBar(
                           malePercentage: pokemon.gender.male,
                           femalePercentage: pokemon.gender.female,
+                        ),
+                        const SizedBox(height: 16.0),
+                        Center(
+                          child: Text(
+                            'Fraquezas',
+                            style: const TextStyle(
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 10.0),
+                        GridView.builder(
+                          padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 3,
+                                childAspectRatio: 4,
+                                mainAxisSpacing: 8,
+                              ),
+                          itemCount: pokemon.weaknesses.length,
+                          itemBuilder: (context, index) {
+                            final weakness = pokemon.weaknesses[index];
+                            return TypesPokemon(
+                              type: weakness,
+                              color: ColorsScheme().getColorByType(weakness),
+                              icon: IconsScheme().getIconByType(weakness),
+                            );
+                          },
                         ),
                         const SizedBox(height: 16.0),
                         Center(
@@ -134,10 +168,11 @@ class DetailsPokemonPage extends StatelessWidget {
                             style: const TextStyle(
                               fontSize: 16.0,
                               fontWeight: FontWeight.bold,
-                              color: Colors.black54,
+                              color: Colors.grey,
                             ),
                           ),
                         ),
+                        SizedBox(height: 10.0),
                         Column(
                           children:
                               pokemon.evolutions.map((evolution) {

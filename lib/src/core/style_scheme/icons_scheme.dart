@@ -18,6 +18,17 @@ class IconsScheme {
       case 'inseto':
         return Icons.bug_report_outlined;
 
+      case 'gelo':
+        return Icons.ac_unit;
+      case 'psíquico':
+        return Icons.psychology;
+      case 'terrestre':
+        return Icons.crop_square;
+      case 'pedra':
+        return Icons.terrain;
+      case 'elétrico':
+        return Icons.flash_on;
+
       default:
         return Icons.help_outline;
     }
