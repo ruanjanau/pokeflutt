@@ -46,13 +46,15 @@ dependencies:
   font_awesome_flutter: ^10.8.0
   shimmer: ^3.0.0
   flutter_carousel_intro: ^1.0.11
+
   
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   build_runner: ^2.5.4
-  mobx_codegen: ^2.7.1  
+  mobx_codegen: ^2.7.1 
+  flutter_launcher_icons: ^0.14.4 
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -76,6 +78,11 @@ flutter:
   assets:
     - assets/lottie/
     - assets/images/
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/pokebola.png"
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
