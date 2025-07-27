@@ -62,17 +62,6 @@ class DetailsPokemonPage extends StatelessWidget {
                         onPressed: () => Modular.to.pop(),
                       ),
                     ),
-                    Positioned(
-                      top: MediaQuery.of(context).padding.top + 10.0,
-                      right: 16.0,
-                      child: IconButton(
-                        icon: const Icon(
-                          Icons.favorite_border,
-                          color: Colors.white,
-                        ),
-                        onPressed: () {},
-                      ),
-                    ),
                   ],
                 ),
               ),

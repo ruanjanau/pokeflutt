@@ -4,6 +4,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:my_pokedex/src/core/assets/strings/strings.dart';
 import 'package:my_pokedex/src/core/life_cycle/page_life_cycle.dart';
 import 'package:my_pokedex/src/core/theme/theme_app.dart';
+import 'package:my_pokedex/src/core/widgets/filter_button.dart';
 import 'package:my_pokedex/src/features/presentations/pages/home/controllers/home_pokemon_controller.dart';
 import 'package:my_pokedex/src/features/presentations/pages/home/widgets/card_pokemon_component.dart';
 import 'package:my_pokedex/src/features/presentations/pages/home/widgets/card_pokemon_shimmer_component.dart';
@@ -37,7 +38,7 @@ class _HomePokemonPageState
                   : Icons.light_mode,
             ),
             onPressed: () {
-              themeStore.toggleTheme();
+              setState(() => themeStore.toggleTheme());
             },
           ),
         ],
@@ -55,21 +56,31 @@ class _HomePokemonPageState
             if (controller.pokemons.isEmpty) {
               return const Center(child: Text('Nenhum Pokemon encontrado'));
             }
-            return ListView.builder(
-              scrollDirection: Axis.vertical,
-              itemCount: controller.pokemons.length,
-              itemBuilder: (context, index) {
-                final pokemon = controller.pokemons[index];
-                return CardPokemonComponent(
-                  onTap: () {
-                    Modular.to.pushNamed('/details', arguments: pokemon);
-                  },
-                  number: pokemon.number,
-                  name: pokemon.name,
-                  types: pokemon.type,
-                  image: pokemon.image,
-                );
-              },
+            return Column(
+              children: [
+                FilterButton(),
+                Expanded(
+                  child: ListView.builder(
+                    scrollDirection: Axis.vertical,
+                    itemCount: controller.pokemons.length,
+                    itemBuilder: (context, index) {
+                      final pokemon = controller.pokemons[index];
+                      return CardPokemonComponent(
+                        onTap:
+                            () => Modular.to.pushNamed(
+                              '/details',
+                              arguments: pokemon,
+                            ),
+
+                        number: pokemon.number,
+                        name: pokemon.name,
+                        types: pokemon.type,
+                        image: pokemon.image,
+                      );
+                    },
+                  ),
+                ),
+              ],
             );
           },
         ),

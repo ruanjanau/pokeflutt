@@ -41,7 +41,7 @@ class GenderProgressBar extends StatelessWidget {
                   "${malePercentage.toStringAsFixed(1)}%",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.grey[800],
+                    color: Colors.grey,
                   ),
                 ),
               ],
@@ -54,7 +54,7 @@ class GenderProgressBar extends StatelessWidget {
                   "${femalePercentage.toStringAsFixed(1)}%",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.grey[800],
+                    color: Colors.grey,
                   ),
                 ),
               ],

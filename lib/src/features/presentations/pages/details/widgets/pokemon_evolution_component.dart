@@ -36,7 +36,7 @@ class PokemonEvolutionComponent extends StatelessWidget {
                 height: 100,
                 decoration: BoxDecoration(
                   color: typeColor,
-                  borderRadius: BorderRadius.circular(32),
+                  borderRadius: BorderRadius.circular(30),
                 ),
                 child: Image.network(
                   imageUrl,
@@ -56,6 +56,7 @@ class PokemonEvolutionComponent extends StatelessWidget {
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
+                        color: Colors.black87,
                       ),
                     ),
                     Text(
