@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
-class FilterButton extends StatelessWidget {
-  const FilterButton({super.key, this.onPressed});
+class PrimaryButton extends StatelessWidget {
+  const PrimaryButton({
+    super.key,
+    this.onPressed,
+    required this.color,
+    required this.titileButton,
+  });
   final VoidCallback? onPressed;
+  final Color color;
+  final String titileButton;
 
   @override
   Widget build(BuildContext context) {
@@ -12,20 +19,19 @@ class FilterButton extends StatelessWidget {
         width: double.infinity,
 
         child: ElevatedButton(
-          style: ElevatedButton.styleFrom(backgroundColor: Colors.black87),
-          onPressed: () {},
+          style: ElevatedButton.styleFrom(backgroundColor: color),
+          onPressed: onPressed,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Filtrar por tipo',
+                titileButton,
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 16.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Icon(Icons.arrow_drop_down, color: Colors.white, size: 24.0),
             ],
           ),
         ),
