@@ -6,6 +6,7 @@ import 'package:my_pokedex/src/core/life_cycle/page_life_cycle.dart';
 import 'package:my_pokedex/src/core/theme/theme_app.dart';
 import 'package:my_pokedex/src/features/presentations/pages/home/controllers/home_pokemon_controller.dart';
 import 'package:my_pokedex/src/features/presentations/pages/home/widgets/card_pokemon_component.dart';
+import 'package:my_pokedex/src/features/presentations/pages/home/widgets/card_pokemon_shimmer_component.dart';
 
 class HomePokemonPage extends StatefulWidget {
   const HomePokemonPage({super.key});
@@ -49,7 +50,7 @@ class _HomePokemonPageState
         child: Observer(
           builder: (_) {
             if (controller.isLoading) {
-              return Center(child: const CircularProgressIndicator());
+              return CardPokemonShimmerComponent();
             }
             if (controller.pokemons.isEmpty) {
               return const Center(child: Text('Nenhum Pokemon encontrado'));
