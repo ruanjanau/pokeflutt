@@ -17,9 +17,8 @@ PokeFlutt é um aplicativo Flutter de Pokédex, com design moderno e recursos qu
 
 | Tela Inicial | Detalhes do Pokémon | Tema Claro e Escuro |
 |--------------|---------------------|----------------------|
-| ![Home](assets/screenshots/home.png) | ![Detalhes](assets/screenshots/details.png) | ![Tema](assets/screenshots/theme_switch.png) |
+| ![Home](assets/screenshot/home.png) | ![Detalhes](assets/screenshot/details.png) | ![Tema](assets/screenshot/options.png) |
 
-> 📌 Coloque suas capturas de tela em `assets/screenshots/` e ajuste os nomes se necessário.
 
 ## 🚀 Instalação
 
