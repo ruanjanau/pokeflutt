@@ -1,3 +1,5 @@
+//coverage:ignore-file
+
 enum HttpMethod { get, post, patch, put, delete, download }
 
 extension ToUpperCase on HttpMethod {

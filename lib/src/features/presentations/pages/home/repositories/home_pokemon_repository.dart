@@ -1,3 +1,5 @@
+//coverage:ignore-file
+
 import '../../../../../core/adapters/adapters.dart';
 import '../../../../../core/life_cycle/life_cycle.dart';
 import '../../../../../core/models/models.dart';

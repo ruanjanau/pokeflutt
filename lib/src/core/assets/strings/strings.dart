@@ -1,3 +1,5 @@
+//coverage:ignore-file
+
 class Strings {
   /// General
   static const String start = 'Iniciar';

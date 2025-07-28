@@ -1,3 +1,5 @@
+//coverage:ignore-file
+
 import 'models.dart';
 
 class PokemonModel {

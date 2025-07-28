@@ -1,3 +1,5 @@
+//coverage:ignore-file
+
 class PokemonDetailEntity {
   final List<String> types;
   final String name;

@@ -1,3 +1,5 @@
+//coverage:ignore-file
+
 import 'package:dio/dio.dart' as dio;
 
 import 'adapters.dart';

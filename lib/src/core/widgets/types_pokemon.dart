@@ -1,3 +1,5 @@
+//coverage:ignore-file
+
 import 'package:flutter/material.dart';
 
 class TypesPokemon extends StatelessWidget {

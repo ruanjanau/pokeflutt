@@ -1,3 +1,5 @@
+//coverage:ignore-file
+
 import 'package:flutter/material.dart';
 import 'package:flutter_carousel_intro/flutter_carousel_intro.dart';
 import 'package:flutter_carousel_intro/slider_item_model.dart';

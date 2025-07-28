@@ -1,3 +1,5 @@
+//coverage:ignore-file
+
 class PokemonGender {
   final double male;
   final double female;

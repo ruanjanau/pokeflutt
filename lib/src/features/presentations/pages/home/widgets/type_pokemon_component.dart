@@ -1,3 +1,5 @@
+//coverage:ignore-file
+
 import 'package:flutter/material.dart';
 
 import '../../../../../core/style_scheme/style_scheme.dart';

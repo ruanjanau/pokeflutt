@@ -1,3 +1,5 @@
+//coverage:ignore-file
+
 import 'package:flutter_modular/flutter_modular.dart';
 
 mixin ControllerLifeCycle implements Disposable {

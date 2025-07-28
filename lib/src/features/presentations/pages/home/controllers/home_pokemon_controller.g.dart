@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+//coverage:ignore-file
 
 part of 'home_pokemon_controller.dart';
 

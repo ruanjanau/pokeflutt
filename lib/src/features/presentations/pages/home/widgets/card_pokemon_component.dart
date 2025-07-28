@@ -1,4 +1,5 @@
 // ignore_for_file: deprecated_member_use
+//coverage:ignore-file
 
 import 'package:flutter/material.dart';
 

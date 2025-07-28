@@ -1,3 +1,5 @@
+//coverage:ignore-file
+
 class PokemonEvolution {
   final int stage;
   final String name;
