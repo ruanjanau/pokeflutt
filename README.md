@@ -1,16 +1,30 @@
-# my_pokedex
+# 🧩 PokeFlutt
 
-A new Flutter project.
+PokeFlutt é um aplicativo Flutter de Pokédex, com design moderno e recursos que permitem explorar detalhes dos Pokémons, incluindo tipo, fraquezas, evoluções, gênero, entre outros.
 
-## Getting Started
+## 📱 Funcionalidades
 
-This project is a starting point for a Flutter application.
+- Listagem de Pokémons com número, nome e tipo.
+- Tela de detalhes com:
+  - Imagem do Pokémon.
+  - Tipos e fraquezas.
+  - Evoluções.
+  - Gênero.
+- Suporte ao tema claro e escuro.
+- UI responsiva e intuitiva.
 
-A few resources to get you started if this is your first Flutter project:
+## 🖼️ Screenshots
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+| Tela Inicial | Detalhes do Pokémon | Tema Claro e Escuro |
+|--------------|---------------------|----------------------|
+| ![Home](assets/screenshots/home.png) | ![Detalhes](assets/screenshots/details.png) | ![Tema](assets/screenshots/theme_switch.png) |
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+> 📌 Coloque suas capturas de tela em `assets/screenshots/` e ajuste os nomes se necessário.
+
+## 🚀 Instalação
+
+```bash
+git clone https://github.com/seu-usuario/pokeflutt.git
+cd pokeflutt
+flutter pub get
+flutter run
