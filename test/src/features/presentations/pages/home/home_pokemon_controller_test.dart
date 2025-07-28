@@ -86,15 +86,12 @@ void main() {
   });
 
   test('Deve buscar e preencher a lista de Pokémons', () async {
-    // Arrange
     when(
       () => mockRepository.getHomePokemons(),
     ).thenAnswer((_) async => mockPokemons);
 
-    // Act
     await controller.getPokemons();
 
-    // Assert
     expect(controller.pokemons, equals(mockPokemons));
     expect(controller.isLoading, isFalse);
   });
@@ -106,7 +103,6 @@ void main() {
 
     controller.onInit();
 
-    // Espera a execução terminar
     await Future.delayed(Duration.zero);
 
     expect(controller.pokemons, equals(mockPokemons));
